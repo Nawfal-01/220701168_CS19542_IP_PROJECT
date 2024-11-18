@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Dashboard</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Navbar styling */
+        nav {
+            background: linear-gradient(90deg, #1d99be, #48c6e9);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-top: 2rem;
+            color: #1d99be;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        /* Summary section */
+        .summary {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .summary-item {
+            background-color: white;
+            border: 2px solid #1d99be;
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+        }
+
+        .summary-item h3 {
+            color: #1d99be;
+            font-size: 1.5rem;
+        }
+
+        .summary-item p {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Transaction form styling */
+        .transaction-form {
+            margin-top: 2rem;
+            background-color: #e3f2fd;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid #1d99be;
+        }
+
+        .transaction-form h2 {
+            text-align: center;
+            color: #1d99be;
+            margin-bottom: 1.5rem;
+        }
+
+        .transaction-form form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .transaction-form input, .transaction-form select {
+            margin-bottom: 1rem;
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #1d99be;
+            border-radius: 5px;
+        }
+
+        .transaction-form button {
+            background-color: #1d99be;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .transaction-form button:hover {
+            background-color: #48c6e9;
+        }
+    </style>
+
+    <script src="dashboard.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="history.html">Transaction History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="analytics.html">Transaction Analytics</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Personal Finance Manager</h1>
+        </header>
+
+        <!-- Summary Section -->
+        <section class="summary row mt-4">
+            <div class="summary-item col-md-4">
+                <h3>Total Income</h3>
+                <p id="total-income">RS. 0</p>
+            </div>
+            <div class="summary-item col-md-4">
+                <h3>Total Expenses</h3>
+                <p id="total-expenses">RS. 0</p>
+            </div>
+            <div class="summary-item col-md-4">
+                <h3>Balance</h3>
+                <p id="balance">RS. 0</p>
+            </div>
+        </section>
+
+        <!-- Transaction Form -->
+        <section class="transaction-form mt-5">
+            <h2>Add Transaction</h2>
+            <form id="transaction-form" method="post" action="add_transaction.php">
+                <input type="text" id="description" name="description" placeholder="Description" required>
+                <input type="number" id="amount" name="amount" placeholder="Amount" required>
+                <select id="type" name="type" required>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button type="submit" class="mt-3">Add Transaction</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

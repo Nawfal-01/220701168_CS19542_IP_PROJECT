@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Navbar styling */
+        nav {
+            background: linear-gradient(90deg, #1d99be, #48c6e9);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-top: 2rem;
+            color: #1d99be;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        /* Table Styling */
+        table {
+            margin-top: 2rem;
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #1d99be;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #1d99be;
+            color: white;
+        }
+
+        /* Month Selection */
+        .form-group {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        #month-select {
+            padding: 8px;
+            border: 2px solid #1d99be;
+            border-radius: 5px;
+        }
+    </style>
+
+    <script src="history.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="history.html">Transaction History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="analytics.html">Transaction Analytics</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Transaction History</h1>
+        </header>
+
+        <!-- Month Selection -->
+        <div class="form-group">
+            <label for="month-select">Select Month:</label>
+            <input type="month" id="month-select" class="form-control mx-auto" style="max-width: 300px;">
+        </div>
+
+        <!-- Transaction Table -->
+        <table id="transactionTable" class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Transaction data will be dynamically populated -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
